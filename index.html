@@ -68,6 +68,10 @@
       font-weight: 800;
       font-size: 16px;
       transition: 0.2s ease;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      line-height: 1.2;
     }
 
     .wcle-btn-primary {
@@ -295,6 +299,28 @@
     }
   </style>
 
+  <script>
+    function openWcleLanding() {
+      var targetUrl = 'https://wcle.co.kr/landing/20260123?m=3192929';
+      var newWindow = window.open(targetUrl, '_blank');
+
+      if (newWindow) {
+        newWindow.opener = null;
+      }
+    }
+
+    function scrollToWcleService() {
+      var target = document.getElementById('wcle-service');
+
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
+  </script>
+
   <section class="wcle-hero">
     <div class="wcle-container">
       <div class="wcle-badge">예체능 전문가 매칭 플랫폼</div>
@@ -304,12 +330,13 @@
         개인 레슨, 기업 프로그램, 단체 수업, 공연·체험 콘텐츠를 연결하는 플랫폼입니다.
       </p>
       <div class="wcle-buttons">
-        <a class="wcle-btn wcle-btn-primary" href="https://wcle.co.kr/landing/20260123?m=3192929" target="_blank" rel="noopener">
+        <button class="wcle-btn wcle-btn-primary" type="button" onclick="openWcleLanding()">
           공식 사이트 바로가기
-        </a>
-        <a class="wcle-btn wcle-btn-secondary" href="#wcle-service">
+        </button>
+
+        <button class="wcle-btn wcle-btn-secondary" type="button" onclick="scrollToWcleService()">
           서비스 알아보기
-        </a>
+        </button>
       </div>
     </div>
   </section>
@@ -396,7 +423,7 @@
 
         <div class="wcle-card">
           <h3>기업·기관 담당자</h3>
-          <p>워크숍, 복지 프로그램, 강연, 체험 행사 등 맞춤형 프로그램을 검토할 수 있습니다.</p>
+          <p>워크숍, 임직원 프로그램, 강연, 체험 행사 등 맞춤형 프로그램을 검토할 수 있습니다.</p>
         </div>
       </div>
     </div>
@@ -473,9 +500,9 @@
         <p>
           개인 레슨부터 기업·기관 프로그램까지, 목적에 맞는 예체능 전문가와 콘텐츠를 월클플레이에서 확인할 수 있습니다.
         </p>
-        <a class="wcle-btn" href="https://wcle.co.kr/landing/20260123?m=3192929" target="_blank" rel="noopener">
+        <button class="wcle-btn" type="button" onclick="openWcleLanding()">
           월클플레이 공식 사이트 바로가기
-        </a>
+        </button>
       </div>
     </div>
   </section>
