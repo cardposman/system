@@ -37,7 +37,9 @@
       line-height: 1.7;
       background: #ffffff;
       word-break: keep-all;
+      overflow-x: hidden;
       padding-bottom: 96px;
+      -webkit-text-size-adjust: 100%;
     }
 
     * {
@@ -53,7 +55,7 @@
     }
 
     .wcle-container {
-      max-width: 1080px;
+      width: min(1080px, 100%);
       margin: 0 auto;
     }
 
@@ -590,41 +592,95 @@
 
     @media (max-width: 640px) {
       body {
-        padding-bottom: 140px;
+        padding-bottom: 112px;
+        line-height: 1.62;
       }
 
       .wcle-section {
-        padding: 60px 18px;
+        padding: 46px 16px;
+      }
+
+      .wcle-container {
+        width: 100%;
+      }
+
+      .wcle-topbar {
+        position: sticky;
       }
 
       .wcle-topbar-inner {
-        align-items: flex-start;
+        padding: 10px 14px;
+        align-items: stretch;
         flex-direction: column;
+        gap: 8px;
+      }
+
+      .wcle-topbar-title {
+        font-size: 13px;
+        text-align: center;
       }
 
       .wcle-topbar-actions {
         width: 100%;
-        justify-content: flex-start;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+
+      .wcle-btn-small {
+        width: 100%;
+        padding: 11px 10px;
+        font-size: 13px;
       }
 
       .wcle-hero {
-        padding: 72px 18px 84px;
+        padding: 52px 16px 58px;
+        border-radius: 0 0 26px 26px;
+        text-align: left;
+      }
+
+      .wcle-badge {
+        font-size: 12px;
+        padding: 7px 12px;
+        margin-bottom: 16px;
       }
 
       .wcle-hero h1 {
-        font-size: 31px;
+        font-size: 30px;
+        line-height: 1.18;
+        letter-spacing: -1px;
+        margin-bottom: 18px;
       }
 
       .wcle-hero p {
-        font-size: 16px;
+        font-size: 15.5px;
+        margin-bottom: 24px;
+      }
+
+      .wcle-buttons {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .wcle-btn {
+        width: 100%;
+        padding: 14px 16px;
+        font-size: 15px;
       }
 
       .wcle-title {
-        font-size: 28px;
+        font-size: 25px;
+        line-height: 1.28;
+        text-align: left;
+        margin-bottom: 12px;
+        letter-spacing: -0.5px;
       }
 
       .wcle-subtitle {
-        font-size: 16px;
+        font-size: 15.2px;
+        text-align: left;
+        margin: 0 0 26px;
       }
 
       .wcle-summary-grid,
@@ -633,28 +689,165 @@
       .wcle-steps,
       .wcle-proof-grid {
         grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .wcle-summary-card {
+        padding: 20px 18px;
+        text-align: left;
+        border-radius: 18px;
+      }
+
+      .wcle-summary-card strong {
+        font-size: 19px;
       }
 
       .wcle-card,
+      .wcle-target,
+      .wcle-step,
+      .wcle-proof,
       .wcle-tab-panel,
       .wcle-usecase-box {
-        padding: 24px;
+        padding: 20px;
+        border-radius: 18px;
+        box-shadow: 0 8px 22px rgba(17, 24, 39, 0.055);
+      }
+
+      .wcle-card h3,
+      .wcle-target h3,
+      .wcle-step h3,
+      .wcle-proof h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+      }
+
+      .wcle-card p,
+      .wcle-target p,
+      .wcle-step p,
+      .wcle-proof p,
+      .wcle-usecase-box li {
+        font-size: 14.5px;
+      }
+
+      .wcle-tab-buttons {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 8px;
+        margin-left: -2px;
+        margin-right: -2px;
+      }
+
+      .wcle-tab-buttons::-webkit-scrollbar {
+        display: none;
+      }
+
+      .wcle-tab-btn {
+        flex: 0 0 auto;
+        padding: 10px 14px;
+        font-size: 13.5px;
+      }
+
+      .wcle-tab-panel h3 {
+        font-size: 21px;
+      }
+
+      .wcle-tag {
+        font-size: 12.5px;
+        padding: 7px 10px;
+      }
+
+      .wcle-usecase {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .wcle-usecase-box h3 {
+        font-size: 20px;
+      }
+
+      .wcle-usecase-box ul {
+        padding-left: 18px;
+      }
+
+      .wcle-faq-question {
+        padding: 18px 0;
+        font-size: 15.5px;
+        line-height: 1.45;
+      }
+
+      .wcle-faq-answer {
+        padding: 0 0 18px;
+        font-size: 14.5px;
+      }
+
+      .wcle-faq-icon {
+        width: 24px;
+        height: 24px;
+        font-size: 14px;
+      }
+
+      .wcle-cta {
+        padding: 38px 20px;
+        border-radius: 24px;
+        text-align: left;
+      }
+
+      .wcle-cta h2 {
+        font-size: 25px;
+        line-height: 1.28;
+      }
+
+      .wcle-cta p {
+        font-size: 15px;
+        margin-bottom: 22px;
       }
 
       .wcle-bottom-cta {
-        border-radius: 22px;
+        width: calc(100% - 24px);
+        border-radius: 18px;
         align-items: stretch;
-        flex-direction: column;
-        bottom: 12px;
+        flex-direction: row;
+        bottom: 10px;
+        padding: 10px;
+        gap: 8px;
       }
 
       .wcle-bottom-cta-text {
-        text-align: center;
-        padding-left: 0;
+        flex: 1 1 auto;
+        text-align: left;
+        padding-left: 4px;
+        font-size: 12.5px;
+        line-height: 1.35;
       }
 
       .wcle-bottom-cta button {
-        width: 100%;
+        width: auto;
+        min-width: 92px;
+        padding: 11px 14px;
+        font-size: 13.5px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .wcle-hero h1 {
+        font-size: 27px;
+      }
+
+      .wcle-title {
+        font-size: 23px;
+      }
+
+      .wcle-bottom-cta-text {
+        font-size: 11.8px;
+      }
+
+      .wcle-bottom-cta button {
+        min-width: 84px;
+        padding-left: 10px;
+        padding-right: 10px;
       }
     }
   </style>
