@@ -1,4 +1,4 @@
 User-agent: *
-Allow: /pos-system/
+Allow: /
 
 Sitemap: https://cardposman.github.io/pos-system/sitemap.xml

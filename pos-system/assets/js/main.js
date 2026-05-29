@@ -4,7 +4,7 @@ const NAVER_FORM_URL = 'nnnnnnnn';
 function callNow() {
   const cleanNumber = PHONE_NUMBER.replace(/[^0-9+]/g, '');
   if (!cleanNumber) {
-    alert('전화번호 확인이 필요합니다.');
+    alert('전화번호를 입력해 주세요.');
     return;
   }
   window.location.href = 'tel:' + cleanNumber;
@@ -12,7 +12,7 @@ function callNow() {
 
 function openNaverForm() {
   if (!NAVER_FORM_URL || NAVER_FORM_URL === 'nnnnnnnn') {
-    alert('네이버폼 URL 확인 후 연결됩니다. README.md에서 NAVER_FORM_URL 값을 실제 주소로 교체해 주세요.');
+    alert('네이버폼 주소를 실제 URL로 교체해 주세요.');
     return;
   }
   const newWindow = window.open(NAVER_FORM_URL, '_blank', 'noopener,noreferrer');
